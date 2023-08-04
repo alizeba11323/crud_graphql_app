@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const { ApolloServer } = require("@apollo/server");
 const { resolvers, typeDefs } = require("./src/graphql");
 const Post = require("./src/models/post");
+const User = require("./src/models/user");
 const { PORT } = require("./src/config");
 const connectDB = require("./src/functions/db");
 (async function () {
@@ -24,6 +25,7 @@ const connectDB = require("./src/functions/db");
       context: () => {
         return {
           postContext: Post,
+          userContext: User,
         };
       },
     })

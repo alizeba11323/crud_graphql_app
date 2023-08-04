@@ -1,3 +1,4 @@
 const BaseDefs = require("./BaseDefs");
 const Post = require("./post");
-module.exports = [BaseDefs, Post];
+const User = require("./user");
+module.exports = [BaseDefs, Post, User];
