@@ -5,7 +5,7 @@ module.exports = gql`
     hello: String!
   }
   extend type Mutation {
-    createPost(inputPost: PostInput): Post!
+    createPost(inputPost: PostInput): Post! @auth
   }
   type Post {
     _id: ID!
