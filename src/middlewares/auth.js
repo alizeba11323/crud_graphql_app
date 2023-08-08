@@ -1,6 +1,7 @@
 const { JWT_SECRET } = require("../config");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
+const { GraphQLError } = require("graphql");
 module.exports = async (req, res, next) => {
   const headerAuth = req.get("Authorization"); //bearer token ["bearer","token"]
   if (!headerAuth) {
@@ -34,7 +35,6 @@ module.exports = async (req, res, next) => {
     };
     return next();
   } catch (err) {
-    throw new Error(err.message);
+    throw new GraphQLError(err.message);
   }
-  next();
 };

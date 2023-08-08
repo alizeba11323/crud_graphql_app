@@ -3,6 +3,8 @@ const { gql } = require("graphql-tag");
 module.exports = gql`
   extend type Query {
     hello: String!
+    getAllPost: [Post!]!
+    getSinglePost(id: ID!): Post!
   }
   extend type Mutation {
     createPost(inputPost: PostInput): Post! @auth
