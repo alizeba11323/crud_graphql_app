@@ -73,6 +73,7 @@ export const useCreatePostData = () => {
       const res1 = dispatch(setCreatedPost(res.data?.createPost));
       console.log(res1);
     } catch (err) {
+      console.log(err);
       dispatch(setError(err.message));
     }
   };
